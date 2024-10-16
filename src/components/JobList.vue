@@ -1,10 +1,8 @@
 <script setup>
-import { reactive, onMounted, ref } from 'vue'
-import jobData from '@/api/jobs.json'
+import { ref, reactive, onMounted } from 'vue'
+import axios from 'axios'
 
 import ListItem from './ListItem.vue'
-
-const jobs = ref(jobData)
 
 defineProps({
   limit: Number,
@@ -12,6 +10,21 @@ defineProps({
     type: Boolean,
     default: false,
   },
+})
+const state = reactive({
+  jobs: [],
+  isLoading: true,
+})
+
+onMounted(async () => {
+  try {
+    const response = await axios.get('jobs.json')
+    state.jobs = response.data
+  } catch (error) {
+    console.error('Error fetching jobs', error)
+  } finally {
+    state.isLoading = false
+  }
 })
 </script>
 
@@ -21,7 +34,7 @@ defineProps({
       <h2 class="jobs_title">Browse Jobs</h2>
       <div class="jobs_container">
         <ListItem
-          v-for="job in jobs.slice(0, limit || state.jobs.length)"
+          v-for="job in state.jobs.slice(0, limit || state.jobs.length)"
           :key="job.id"
           :job="job"
         />

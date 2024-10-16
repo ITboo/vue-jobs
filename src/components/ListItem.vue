@@ -1,5 +1,6 @@
 <script setup>
 import { ref, computed } from 'vue'
+import { RouterLink } from 'vue-router'
 
 const props = defineProps({
   job: Object,
@@ -42,7 +43,9 @@ const truncatedDescription = computed(() => {
           <i class="pi pi-map-marker"></i>
           {{ job.location }}
         </div>
-        <a :href="'/job/' + job.id" class="job_link">Read more</a>
+        <RouterLink :to="'/jobs/' + job.id" class="job_link"
+          >Read more</RouterLink
+        >
       </div>
     </div>
   </div>

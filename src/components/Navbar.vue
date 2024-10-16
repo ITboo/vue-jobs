@@ -20,9 +20,24 @@ const isActiveLink = routePath => {
         </RouterLink>
 
         <div class="menu">
-          <RouterLink to="/" class="menu_link">Home</RouterLink>
-          <RouterLink to="/jobs" class="menu_link">Jobs</RouterLink>
-          <RouterLink to="/" class="menu_link">Add Job</RouterLink>
+          <RouterLink
+            to="/"
+            class="menu_link"
+            :class="[isActiveLink('/') ? 'active' : '']"
+            >Home</RouterLink
+          >
+          <RouterLink
+            to="/jobs"
+            class="menu_link"
+            :class="[isActiveLink('/jobs') ? 'active' : '']"
+            >Jobs</RouterLink
+          >
+          <RouterLink
+            to="/"
+            class="menu_link"
+            :class="[isActiveLink('/add') ? 'active' : '']"
+            >Add Job</RouterLink
+          >
         </div>
       </nav>
     </div>
@@ -32,6 +47,9 @@ const isActiveLink = routePath => {
 <style scoped>
 a {
   text-decoration: none;
+}
+.active {
+  text-decoration: underline;
 }
 .menu_link {
   font-size: 1.5em;

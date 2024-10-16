@@ -1,5 +1,6 @@
 <script setup>
 import Card from '@/components/Card.vue'
+import { RouterLink } from 'vue-router'
 </script>
 
 <template>
@@ -8,14 +9,14 @@ import Card from '@/components/Card.vue'
       <Card class="dev_card card">
         <h2 class="card_title">For Developers</h2>
         <p class="card_text">Browse our Vue jobs and start your career today</p>
-        <a href="/" class="btn dev_btn"> Browse Jobs </a>
+        <RouterLink to="/jobs" class="btn dev_btn"> Browse Jobs </RouterLink>
       </Card>
       <Card class="employer_card card">
         <h2 class="card_title">For Employers</h2>
         <p class="card_text">
           List your job to find the perfect developer for the role
         </p>
-        <a href="/" class="btn employer_btn"> Add Job </a>
+        <RouterLink to="/add" class="btn employer_btn"> Add Job </RouterLink>
       </Card>
     </div>
   </section>
