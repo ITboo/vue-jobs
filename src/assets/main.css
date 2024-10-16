@@ -1,8 +1,20 @@
 @import './base.css';
+@import 'primeicons/primeicons.css';
 
-#app {
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-family: 'Rubik', sans-serif;
+}
+a {
+  text-decoration: none;
+}
+.container {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
+  padding: 20px 5px;
 }

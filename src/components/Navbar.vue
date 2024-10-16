@@ -1,25 +1,48 @@
 <script setup>
-import logo from '../assets/img/logo.png'
+import { RouterLink, useRoute } from 'vue-router'
+import logo from '@/assets/img/logo.png'
+
+const isActiveLink = routePath => {
+  const route = useRoute()
+  return route.path === routePath
+}
 </script>
 
 <template>
-  <nav class="nav">
-    <a href="/">
-      <div class="logo">
-        <img class="" :src="logo" alt="logo" width="100" />
-        <span class="logo_span">Vue Jobs</span>
-      </div>
-    </a>
+  <header class="">
+    <div class="container">
+      <nav class="nav">
+        <RouterLink to="/">
+          <div class="logo">
+            <img class="" :src="logo" alt="logo" width="50" />
+            <span class="logo_span">Vue Jobs</span>
+          </div>
+        </RouterLink>
 
-    <div class="menu">
-      <a href="/">Home</a>
-      <a href="/">Jobs</a>
-      <a href="/">Add Job</a>
+        <div class="menu">
+          <RouterLink to="/" class="menu_link">Home</RouterLink>
+          <RouterLink to="/jobs" class="menu_link">Jobs</RouterLink>
+          <RouterLink to="/" class="menu_link">Add Job</RouterLink>
+        </div>
+      </nav>
     </div>
-  </nav>
+  </header>
 </template>
 
 <style scoped>
+a {
+  text-decoration: none;
+}
+.menu_link {
+  font-size: 1.5em;
+  color: black;
+  transition: all ease 0.3s;
+}
+.menu_link:hover {
+  color: var(--main-color);
+  transition: all ease 0.3s;
+}
+
 .nav {
   display: flex;
   justify-content: space-between;
@@ -31,6 +54,7 @@ import logo from '../assets/img/logo.png'
 }
 .logo_span {
   font-size: 3em;
+  color: var(--main-color);
 }
 .menu {
   display: flex;
