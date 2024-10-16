@@ -1,7 +1,9 @@
 <script setup>
 import { reactive, onMounted } from 'vue'
 import { useRoute, RouterLink, useRouter } from 'vue-router'
+import PulseLoader from 'vue-spinner/src/PulseLoader.vue'
 import axios from 'axios'
+import BackButton from '@/components/BackButton.vue'
 
 const route = useRoute()
 const jobId = route.params.id
@@ -26,6 +28,7 @@ onMounted(async () => {
 
 <template>
   <section v-if="!state.isLoading" class="">
+    <BackButton />
     <div class="container details">
       <main class="main">
         <div class="">
@@ -71,8 +74,8 @@ onMounted(async () => {
     </div>
   </section>
 
-  <div v-else class="">
-    <PulseLoader />
+  <div v-else class="loader">
+    <PulseLoader color="lightblue" />
   </div>
 </template>
 
@@ -116,5 +119,8 @@ onMounted(async () => {
 }
 .company_description {
   margin-bottom: 5px;
+}
+.loader {
+  text-align: center;
 }
 </style>

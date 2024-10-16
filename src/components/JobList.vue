@@ -1,7 +1,7 @@
 <script setup>
 import { ref, reactive, onMounted } from 'vue'
 import axios from 'axios'
-
+import PulseLoader from 'vue-spinner/src/PulseLoader.vue'
 import ListItem from './ListItem.vue'
 
 defineProps({
@@ -32,15 +32,20 @@ onMounted(async () => {
   <section class="jobs">
     <div class="container">
       <h2 class="jobs_title">Browse Jobs</h2>
-      <div class="jobs_container">
-        <ListItem
-          v-for="job in state.jobs.slice(0, limit || state.jobs.length)"
-          :key="job.id"
-          :job="job"
-        />
+      <div v-if="state.isLoading" class="loader">
+        <PulseLoader color="lightblue" />
       </div>
-      <div v-if="showButton" class="btn_container">
-        <a href="/jobs" class="jobs-btn">View All Jobs</a>
+      <div v-else class="">
+        <div class="jobs_container">
+          <ListItem
+            v-for="job in state.jobs.slice(0, limit || state.jobs.length)"
+            :key="job.id"
+            :job="job"
+          />
+        </div>
+        <div v-if="showButton" class="btn_container">
+          <a href="/jobs" class="jobs-btn">View All Jobs</a>
+        </div>
       </div>
     </div>
   </section>
@@ -69,5 +74,8 @@ onMounted(async () => {
   width: 200px;
   padding: 10px 20px;
   border-radius: 20px;
+}
+.loader {
+  text-align: center;
 }
 </style>
