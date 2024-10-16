@@ -66,9 +66,11 @@ const truncatedDescription = computed(() => {
   border: none;
   background-color: transparent;
   color: gray;
+  cursor: pointer;
 }
 .salary {
   color: var(--main-color);
+  margin: 20px 0;
 }
 .job_bottom {
   display: flex;
