@@ -1,8 +1,11 @@
 <script setup>
 import router from '@/router'
-import { reactive } from 'vue'
+import { reactive, computed } from 'vue'
 import axios from 'axios'
 import { useToast } from 'vue-toastification'
+
+import { useVuelidate } from '@vuelidate/core'
+import { required, email } from '@vuelidate/validators'
 
 const toast = useToast()
 
@@ -19,6 +22,20 @@ const form = reactive({
     contactPhone: '',
   },
 })
+
+const rules = computed(() => ({
+  type: { required },
+  title: { required },
+  description: { required },
+  salary: { required },
+  location: { required },
+  company: {
+    name: { required },
+    description: { required },
+    contactEmail: { required, email },
+    contactPhone: { required },
+  },
+}))
 
 const handleSubmit = async () => {
   const newJob = {
@@ -43,6 +60,13 @@ const handleSubmit = async () => {
     toast.error('Job Was Not Added')
     console.error('Error fetching job', error)
   }
+}
+const v$ = useVuelidate(rules, form)
+
+const validateForm = ({ prop }) => {
+  const error = v$.value.$errors.find(el => el.$property === prop)
+  console.log('ghj')
+  return error && error.$message
 }
 </script>
 
@@ -183,7 +207,9 @@ const handleSubmit = async () => {
         </div>
 
         <div>
-          <button class="add-btn btn" type="submit">Add Job</button>
+          <button class="add-btn btn" type="submit" @click="validateForm">
+            Add Job
+          </button>
         </div>
       </form>
     </div>
