@@ -16,7 +16,9 @@ import { RouterLink } from 'vue-router'
         <p class="card_text">
           List your job to find the perfect developer for the role
         </p>
-        <RouterLink to="/add" class="btn employer_btn"> Add Job </RouterLink>
+        <RouterLink to="/jobs/add" class="btn employer_btn">
+          Add Job
+        </RouterLink>
       </Card>
     </div>
   </section>
@@ -45,12 +47,7 @@ import { RouterLink } from 'vue-router'
   margin-bottom: 20px;
   color: rgb(92, 92, 92);
 }
-.btn {
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 20px;
-  margin-bottom: 10px;
-}
+
 .dev_btn {
   background-color: var(--main-color);
   color: var(--white);

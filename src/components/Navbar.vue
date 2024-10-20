@@ -33,9 +33,9 @@ const isActiveLink = routePath => {
             >Jobs</RouterLink
           >
           <RouterLink
-            to="/"
+            to="/jobs/add"
             class="menu_link"
-            :class="[isActiveLink('/add') ? 'active' : '']"
+            :class="[isActiveLink('/jobs/add') ? 'active' : '']"
             >Add Job</RouterLink
           >
         </div>
@@ -45,6 +45,9 @@ const isActiveLink = routePath => {
 </template>
 
 <style scoped>
+header {
+  height: 10vh;
+}
 a {
   text-decoration: none;
 }
