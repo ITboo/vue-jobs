@@ -83,48 +83,6 @@
         "contactEmail": "contact@ipsumlorem.com",
         "contactPhone": "555-555-5555"
       }
-    },
-    {
-      "id": "fe88",
-      "title": "Boo",
-      "type": "Internship",
-      "location": "kkkkkkk",
-      "description": "",
-      "salary": "$60K - $70K",
-      "company": {
-        "name": "Self-employed",
-        "description": "",
-        "contactEmail": "ssssssss@gmail.ru",
-        "contactPhone": "fffffffffffff"
-      }
-    },
-    {
-      "id": "3fa1",
-      "title": "Boo",
-      "type": "Full-Time",
-      "location": "kkkkkkk",
-      "description": "",
-      "salary": "$70K - $80K",
-      "company": {
-        "name": "",
-        "description": "",
-        "contactEmail": "ssssssss@gmail.ru",
-        "contactPhone": "fffffffffffff"
-      }
-    },
-    {
-      "id": "fd6e",
-      "title": "Boo",
-      "type": "Full-Time",
-      "location": "kkkkkkk",
-      "description": "",
-      "salary": "$60K - $70K",
-      "company": {
-        "name": "Self-employed",
-        "description": "",
-        "contactEmail": "ssssssss@gmail.ru",
-        "contactPhone": "fffffffffffff"
-      }
     }
   ]
 }
