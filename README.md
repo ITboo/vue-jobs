@@ -1,9 +1,12 @@
 # vue-jobs
+![vue-job](https://github.com/user-attachments/assets/f41d2713-bd70-448c-83e4-372fb2594bad)
+
+
+Job-listing project written with Vue. It uses json-file as a local database.
+
+Actual stack: Vue, Vue Router, axios, primeicons, json-server.
 
 ## Project Setup
-
-Job-listing project written with Vue. It uses json-file as a locale database.
-Actual stack: Vue, Vue Router, axios, primeicons, json-server.
 
 To work and display data it uses JSON-Server for a mock backend. So, to see all content, you have to start both servers: mock backend and frontend.
 
