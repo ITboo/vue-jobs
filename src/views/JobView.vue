@@ -89,6 +89,10 @@ onMounted(async () => {
           </p>
         </div>
         <div class="buttons">
+          <h3 class="">Manage Job</h3>
+          <RouterLink :to="`/jobs/edit/${state.job.id}`" class="btn edit-btn"
+            >Edit Job</RouterLink
+          >
           <button @click="deleteJob" class="delete-btn btn">Delete Job</button>
         </div>
       </aside>
@@ -146,6 +150,10 @@ onMounted(async () => {
 }
 .delete-btn {
   background-color: red;
+  color: white;
+}
+.edit-btn {
+  background-color: green;
   color: white;
 }
 </style>
