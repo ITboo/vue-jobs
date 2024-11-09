@@ -78,7 +78,7 @@ onMounted(async () => {
           <p class="company_description">
             {{ state.job.company.description }}
           </p>
-          <hr class="" />
+          <v-divider></v-divider>
           <h3 class="company_title">Contact Email:</h3>
           <p class="company_email">
             {{ state.job.company.contactEmail }}
@@ -90,9 +90,7 @@ onMounted(async () => {
         </div>
         <div class="buttons">
           <h3 class="">Manage Job</h3>
-          <RouterLink :to="`/jobs/edit/${state.job.id}`" class="btn edit-btn"
-            >Edit Job</RouterLink
-          >
+          <RouterLink :to="`/jobs/edit/${state.job.id}`" class="btn edit-btn">Edit Job</RouterLink>
           <button @click="deleteJob" class="delete-btn btn">Delete Job</button>
         </div>
       </aside>
@@ -109,11 +107,13 @@ onMounted(async () => {
 .aside {
   width: 48%;
 }
+
 .details {
   display: flex;
   justify-content: space-between;
   padding: 20px 0;
 }
+
 .job_type {
   background-color: var(--main-color);
   width: fit-content;
@@ -122,9 +122,11 @@ onMounted(async () => {
   color: var(--white);
   margin-bottom: 10px;
 }
+
 .job_description {
   margin-bottom: 10px;
 }
+
 .job_location {
   display: flex;
   align-items: center;
@@ -132,26 +134,32 @@ onMounted(async () => {
   color: gray;
   margin-bottom: 10px;
 }
+
 .company {
   border: solid 2px var(--main-color);
   padding: 20px;
   border-radius: 20px;
 }
+
 .company_title,
 .job_title {
   margin-bottom: 5px;
   color: var(--main-color);
 }
+
 .company_description {
   margin-bottom: 5px;
 }
+
 .loader {
   text-align: center;
 }
+
 .delete-btn {
   background-color: red;
   color: white;
 }
+
 .edit-btn {
   background-color: green;
   color: white;

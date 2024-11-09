@@ -2,11 +2,11 @@
 const currentYear = new Date().getFullYear()
 </script>
 <template>
-  <footer class="container footer">
+  <v-footer border class="footer">
     <a href="https://github.com/ITboo/vue-jobs" target="_blank">GitHub</a>
     <p>{{ currentYear }}</p>
     <p v-text="'For non-commercial use'"></p>
-  </footer>
+  </v-footer>
 </template>
 
 <style scoped>

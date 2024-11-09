@@ -20,7 +20,7 @@ const truncatedDescription = computed(() => {
 </script>
 
 <template>
-  <div class="job">
+  <v-card class="job">
     <div class="">
       <div class="">
         <div class="">{{ job.type }}</div>
@@ -37,18 +37,18 @@ const truncatedDescription = computed(() => {
       </div>
 
       <h3 class="salary">{{ job.salary }} / Year</h3>
-
+      <v-divider></v-divider>
       <div class="job_bottom">
         <div class="location_container">
           <i class="pi pi-map-marker"></i>
           {{ job.location }}
         </div>
-        <RouterLink :to="'/jobs/' + job.id" class="job_link"
-          >Read more</RouterLink
-        >
+        <RouterLink :to="'/jobs/' + job.id">
+          <v-btn color="blue-darken-3">Read more</v-btn>
+        </RouterLink>
       </div>
     </div>
-  </div>
+  </v-card>
 </template>
 
 <style scoped>
@@ -59,26 +59,30 @@ const truncatedDescription = computed(() => {
   width: 350px;
   margin-bottom: 20px;
 }
+
 .description {
   font-weight: 300;
 }
+
 .toggle-btn {
   border: none;
   background-color: transparent;
   color: gray;
   cursor: pointer;
 }
+
 .salary {
   color: var(--main-color);
   margin: 20px 0;
 }
+
 .job_bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: solid 1px gray;
   padding: 10px 0;
 }
+
 .job_link {
   padding: 10px 20px;
   border-radius: 20px;

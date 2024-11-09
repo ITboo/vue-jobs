@@ -37,14 +37,12 @@ onMounted(async () => {
       </div>
       <div v-else class="">
         <div class="jobs_container">
-          <ListItem
-            v-for="job in state.jobs.slice(0, limit || state.jobs.length)"
-            :key="job.id"
-            :job="job"
-          />
+          <ListItem v-for="job in state.jobs.slice(0, limit || state.jobs.length)" :key="job.id" :job="job" />
         </div>
         <div v-if="showButton" class="btn_container">
-          <a href="/jobs" class="jobs-btn">View All Jobs</a>
+          <a href="/jobs">
+            <v-btn rounded="xl" color="blue-darken-3">View All Jobs</v-btn>
+          </a>
         </div>
       </div>
     </div>
@@ -55,11 +53,13 @@ onMounted(async () => {
 .jobs {
   background-color: rgb(230, 244, 248);
 }
+
 .jobs_title {
   font-size: 3em;
   text-align: center;
   margin-bottom: 20px;
 }
+
 .jobs_container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -68,6 +68,7 @@ onMounted(async () => {
 .btn_container {
   text-align: center;
 }
+
 .jobs-btn {
   background-color: black;
   color: var(--white);
@@ -75,6 +76,7 @@ onMounted(async () => {
   padding: 10px 20px;
   border-radius: 20px;
 }
+
 .loader {
   text-align: center;
 }

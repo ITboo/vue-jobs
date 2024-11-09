@@ -9,15 +9,17 @@ import { RouterLink } from 'vue-router'
       <Card class="dev_card card">
         <h2 class="card_title">For Developers</h2>
         <p class="card_text">Browse our Vue jobs and start your career today</p>
-        <RouterLink to="/jobs" class="btn dev_btn"> Browse Jobs </RouterLink>
+        <RouterLink to="/jobs">
+          <v-btn rounded="xl" color="#5865f2">Browse Jobs</v-btn>
+        </RouterLink>
       </Card>
       <Card class="employer_card card">
         <h2 class="card_title">For Employers</h2>
         <p class="card_text">
           List your job to find the perfect developer for the role
         </p>
-        <RouterLink to="/jobs/add" class="btn employer_btn">
-          Add Job
+        <RouterLink to="/jobs/add">
+          <v-btn rounded="xl" color="green-darken-3">Add Job</v-btn>
         </RouterLink>
       </Card>
     </div>
@@ -30,19 +32,24 @@ import { RouterLink } from 'vue-router'
   justify-content: center;
   gap: 50px;
 }
+
 .card {
   padding: 20px;
   border-radius: 20px;
 }
+
 .dev_card {
   background-color: rgba(31, 100, 190, 0.192);
 }
+
 .employer_card {
   border: solid 2px green;
 }
+
 .card_title {
   margin-bottom: 10px;
 }
+
 .card_text {
   margin-bottom: 20px;
   color: rgb(92, 92, 92);
@@ -52,6 +59,7 @@ import { RouterLink } from 'vue-router'
   background-color: var(--main-color);
   color: var(--white);
 }
+
 .employer_btn {
   background-color: green;
   color: var(--white);

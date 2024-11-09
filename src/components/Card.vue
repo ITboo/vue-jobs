@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <div>
+  <v-card>
     <slot></slot>
-  </div>
+  </v-card>
 </template>
